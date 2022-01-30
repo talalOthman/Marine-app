@@ -1,3 +1,10 @@
 .container{
     margin: 1rem;
 }
+.navbarColor{
+    background-color: #7e0cf5 !important;
+}
+
+.navbarColor-footer{
+    background-color: #680cca !important;
+}

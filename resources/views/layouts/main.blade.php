@@ -37,7 +37,7 @@
 <body class="sb-nav-fixed">
     <div id="app">
 
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark navbarColor">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="{{url('/')}}">{{ config('app.name') }}</a>
             <!-- Sidebar Toggle-->
@@ -61,7 +61,7 @@
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-dark navbarColor" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
@@ -82,7 +82,7 @@
 
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <div class="sb-sidenav-footer navbarColor-footer">
                         <div class="small">Logged in as:</div>
                         {{ Auth::user()->name }}
                     </div>
