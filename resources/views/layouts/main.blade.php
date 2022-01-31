@@ -65,20 +65,11 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
-                            <a class="nav-link" href="homePage.php">
+                            <a class="nav-link" href="{{url('/ ')}}">Dashboard</a>
 
-                                Stock Transactions
-                            </a>
+                            <a class="nav-link" href="stockTransfer.php">Add Account</a>
 
-                            <a class="nav-link" href="stockLevel.php">Stock Level</a>
-
-                            <a class="nav-link" href="stockTransfer.php">Stock Transfer</a>
-
-                            <a class="nav-link" href="manualStockIn.php">Stock In</a>
-
-                            <a class="nav-link" href="manualStockout.php">Stock Out</a>
-
-
+                            <a class="nav-link" href="manualStockIn.php">Update Account</a>
 
                         </div>
                     </div>
