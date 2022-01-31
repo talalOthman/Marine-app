@@ -8,3 +8,10 @@
 .navbarColor-footer{
     background-color: #5C61CC !important;
 }
+
+.profile-pic{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+}

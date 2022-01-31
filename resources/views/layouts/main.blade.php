@@ -50,7 +50,13 @@
                 </div>
             </form>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 navbar-container">
+
+                @if(Auth::user()->has_image == false)
+                <img src="{{ asset('images/default.jpeg') }}" alt="{{ Auth::user()->name}}" class="profile-pic">
+                @else
+                <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name}}" class="profile-pic">
+                @endif
 
                 <a href="{{ route('logout') }}" class="logout" role="button"><i class="fas fa-sign-out-alt" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"></i>
