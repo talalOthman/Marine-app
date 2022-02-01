@@ -18,12 +18,10 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
 
+Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('add-account');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');

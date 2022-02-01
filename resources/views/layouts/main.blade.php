@@ -71,9 +71,9 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
-                            <a class="nav-link" href="{{url('/ ')}}">Dashboard</a>
+                            <a class="nav-link" href="{{url('/dashboard')}}">Dashboard</a>
 
-                            <a class="nav-link" href="stockTransfer.php">Add Account</a>
+                            <a class="nav-link" href="{{ route('add-account') }}">Add Account</a>
 
                             <a class="nav-link" href="manualStockIn.php">Update Account</a>
 

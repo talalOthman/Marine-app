@@ -31,4 +31,8 @@ class HomeController extends Controller
             return view('auth.login');
         }
     }
+
+    public function redirectAddAccount(){
+        return view('add_account');
+    }
 }
