@@ -1,0 +1,58 @@
+.container-add-account{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    height: 87vh;
+    justify-content: space-between;
+}
+
+.image-item{
+    border-radius: 50%;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-item{
+    width: 12rem;
+    height: 3rem;
+}
+
+.first, .second{
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control{
+    height: 3rem;
+    width: 20rem;
+}
+
+.edit-item{
+    margin-top: auto;
+    color: #5C61CC;
+}
+
+
+
+
