@@ -34,6 +34,9 @@
     <link href="{{ asset('css/add-account.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url('images/favicon.png') }}">
 </head>
 
 <body class="sb-nav-fixed">
