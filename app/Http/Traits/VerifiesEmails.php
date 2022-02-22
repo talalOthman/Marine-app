@@ -1,6 +1,7 @@
 <?php
 
 namespace Illuminate\Foundation\Auth;
+namespace App\Http\Traits;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Events\Verified;
