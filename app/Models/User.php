@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    //to turn of just one field
+    const UPDATED_AT = null;
+    //to turn off timestamp completely
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *

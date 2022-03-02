@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->boolean('has_image')->default(false);
             $table->string('avatar')->default('default.png');
             $table->rememberToken();
+            $table->timestamps();
         });
     }
 

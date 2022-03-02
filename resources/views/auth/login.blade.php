@@ -13,11 +13,11 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group first">
-                            <label for="email">{{ __('E-Mail Address') }}</label>
+                            <label for="userName">{{ __('User Name') }}</label>
 
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter your email">
+                            <input id="userName" type="text" class="form-control @error('userName') is-invalid @enderror" name="userName" value="{{ old('userName') }}" required autocomplete="userName" autofocus placeholder="Enter your username">
 
-                            @error('email')
+                            @error('userName')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

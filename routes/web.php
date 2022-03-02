@@ -24,6 +24,7 @@ use App\Http\Controllers\Auth\LoginController;
 Route::get('/', [HomeController::class, 'index'])->name('/');
 
 Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('add-account');
+Route::post('/add-account', [RegisterController::class, 'register']);
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
@@ -35,8 +36,8 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Registration Routes...
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register']);
+// Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+// Route::post('register', [RegisterController::class, 'register']);
 
 // Password Reset Routes...
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
