@@ -3,17 +3,30 @@
     flex-direction: column;
     margin: 1rem;
     height: 87vh;
-    justify-content: space-between;
-}
-
-.image-item{
-    border-radius: 50%;
+    justify-content: space-evenly;
 }
 
 .image{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.image-item{
+    border-radius: 50%;
+    height: 25rem;
+    width: 25rem;
+}
+.edit-item{
+    color: #5C61CC;
+}
+
+.edit-item-container{
+    margin-top: auto;
+}
+
+.edit-item:hover{
+    color: #3b41b9;
 }
 
 .forms{
@@ -48,10 +61,9 @@
     width: 20rem;
 }
 
-.edit-item{
-    margin-top: auto;
-    color: #5C61CC;
-}
+.image> .edit-item-container > input {
+    display: none;
+  }
 
 
 

@@ -13,7 +13,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group first">
-                            <label for="userName">{{ __('User Name') }}</label>
+                            <label for="userName">{{ __('Username') }}</label>
 
                             <input id="userName" type="text" class="form-control @error('userName') is-invalid @enderror" name="userName" value="{{ old('userName') }}" required autocomplete="userName" autofocus placeholder="Enter your username">
 
