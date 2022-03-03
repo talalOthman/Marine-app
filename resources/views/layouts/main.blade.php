@@ -62,7 +62,7 @@
                 @if(Auth::user()->has_image == false)
                 <img src="{{ asset('images/default.jpeg') }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic">
                 @else
-                <img src="{{ asset('images/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic">
+                <img src="{{ asset('images/avatars/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic">
                 @endif
 
                 <a href="{{ route('logout') }}" class="logout" role="button"><i class="fas fa-sign-out-alt" onclick="event.preventDefault();

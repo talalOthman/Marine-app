@@ -73,7 +73,7 @@ class RegisterController extends Controller
             $avatar = $data['avatar'];
             $extension = $avatar->getClientOriginalExtension();
             $avatar_name  = time() . '.' . $extension;
-            $avatar->move(base_path('public/images/'), $avatar_name);
+            $avatar->move(base_path('public/images/avatars'), $avatar_name);
             $user->avatar = $avatar_name;
             $user->has_image = 1;
         }
