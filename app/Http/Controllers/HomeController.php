@@ -35,4 +35,8 @@ class HomeController extends Controller
     public function redirectAddAccount(){
         return view('add_account');
     }
+
+    public function redirectUpdateAccount(){
+        return view('update_account');
+    }
 }

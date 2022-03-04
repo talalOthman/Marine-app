@@ -40,7 +40,7 @@ trait RegistersUsers
         
         return $request->wantsJson()
                     ? new JsonResponse([], 201)
-                    : redirect($this->redirectPath())->with('message', 'Successfully added a user account!');
+                    : redirect($this->redirectPath())->with('SuccessMessage', 'Successfully added a user account!');
     }
 
     /**

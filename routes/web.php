@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -23,9 +24,15 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
 
+// Add Account Routes...
 Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('add-account');
 Route::post('/add-account', [RegisterController::class, 'register']);
 
+// Update Account Routes...
+Route::get('/update-account', [HomeController::class, 'redirectUpdateAccount'])->name('update-account');
+Route::post('/update-account', [UserController::class, 'update']);
+
+// Dashboard Route...
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 // Login Routes...

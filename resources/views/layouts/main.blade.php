@@ -60,9 +60,9 @@
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 navbar-container">
 
                 @if(Auth::user()->has_image == false)
-                <img src="{{ asset('images/default.jpeg') }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic">
+                <a href="{{route('update-account')}}"><img src="{{ asset('images/default.jpeg') }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></a>
                 @else
-                <img src="{{ asset('images/avatars/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic">
+                <a href="{{route('update-account')}}"><img src="{{ asset('images/avatars/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></a>
                 @endif
 
                 <a href="{{ route('logout') }}" class="logout" role="button"><i class="fas fa-sign-out-alt" onclick="event.preventDefault();
@@ -82,7 +82,7 @@
 
                             <a class="nav-link" href="{{ route('add-account') }}">Add Account</a>
 
-                            <a class="nav-link" href="manualStockIn.php">Update Account</a>
+                            <a class="nav-link" href="{{ route('update-account') }}">Update Account</a>
 
                         </div>
                     </div>
