@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
@@ -26,7 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()){
-            return view('home');
+            $users = User::where('id', '!=', Auth::id())->get();
+            return view('home')->with(['users' => $users]);
         } else{
             return view('auth.login');
         }
@@ -38,5 +41,10 @@ class HomeController extends Controller
 
     public function redirectUpdateAccount(){
         return view('update_account');
+    }
+
+    public function redirectUpdateSpecificAccount($userId){
+        $user = User::find($userId);
+        return view('update_specific_account')->with(['user' => $user]);
     }
 }
