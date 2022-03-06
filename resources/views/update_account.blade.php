@@ -9,7 +9,7 @@
         @if(Auth::user()->has_image == 0)
         <img class="image-item" id="preview-image-before-upload" src="{{ asset('images/default.jpeg') }}" alt="{{ Auth::user()->name}}">
         @else
-        <img class="image-item" id="preview-image-before-upload" src="{{ asset('images/avatars/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name}}">
+        <img class="image-item" id="preview-image-before-upload" src="{{ asset('images/avatars/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name}}" onerror="this.src='/images/default.jpeg';">
         @endif
         <div class="edit-item-container">
             <label for="image-upload">
