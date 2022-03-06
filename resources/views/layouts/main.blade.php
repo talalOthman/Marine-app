@@ -53,7 +53,13 @@
 
         <nav class="sb-topnav navbar navbar-expand navbarColor">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 no-link-color" href="{{url('/dashboard')}}">{{ config('app.name') }}</a>
+            @if(Auth::user()->userType == "Admin")
+            <a class="navbar-brand ps-3 no-link-color" href="{{route('admin.dashboard')}}">{{ config('app.name') }}</a>
+            @elseif(Auth::user()->userType == "Student")
+            <a class="navbar-brand ps-3 no-link-color" href="{{route('student.dashboard')}}">{{ config('app.name') }}</a>
+            @else
+            <a class="navbar-brand ps-3 no-link-color" href="{{route('public.dashboard')}}">{{ config('app.name') }}</a>
+            @endif
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 no-link-color" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -85,10 +91,18 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
-                            <a class="nav-link" href="{{url('/dashboard')}}">Dashboard</a>
-
-                            <a class="nav-link" href="{{ route('add-account') }}">Add Account</a>
-
+                            @if(Auth::user()->userType == "Admin")
+                            <a class="nav-link" href="{{route('admin.dashboard')}}">Dashboard</a>
+                            <a class="nav-link" href="{{ route('admin.add-account') }}">Add Account</a>
+                            @elseif(Auth::user()->userType == "Student")
+                            <a class="nav-link" href="{{route('student.dashboard')}}">Dashboard</a>
+                            <a class="nav-link" href="">Upload File</a>
+                            @else
+                            <a class="nav-link" href="{{route('public.dashboard')}}">Dashboard</a>
+                            <a class="nav-link" href="">Density of Traffic</a>
+                            <a class="nav-link" href="">Vessel Details</a>
+                            @endif
+                            
                             <a class="nav-link" href="{{ route('update-account') }}">Update Account</a>
 
                         </div>

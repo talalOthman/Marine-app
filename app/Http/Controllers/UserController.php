@@ -48,7 +48,13 @@ class UserController extends Controller
         }
 
         if ($req->userName == null) {
-            return redirect(route('dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            if($user->userType == "Admin"){
+                return redirect(route('admin.dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            }elseif($user->userType == "Student"){
+                return redirect(route('student.dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            }else{
+                return redirect(route('public.dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            }
         }
 
         $user->userName = $req->userName;
@@ -58,8 +64,13 @@ class UserController extends Controller
         $user->save();
 
 
-
-        return redirect(route('dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        if($user->userType == "Admin"){
+            return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        }elseif($user->userType == "Student"){
+            return redirect(route('student.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        }else{
+            return redirect(route('public.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        }
     }
 
     public function UpdateSpecificAccount(Request $req, $userId){
@@ -87,7 +98,7 @@ class UserController extends Controller
         }
 
         if ($req->userName == null) {
-            return redirect(route('dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            return redirect(route('admin.dashboard'))->with('ErrorMessage', 'Error while updating account details');
         }
 
         $user->userName = $req->userName;
@@ -98,16 +109,16 @@ class UserController extends Controller
 
 
 
-        return redirect(route('dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
     }
 
     public function deleteUser($userId){
         $user = User::find($userId);
         
         if($user->delete()){
-            return redirect(route('dashboard'))->with('SuccessMessage', 'Successfully delete the selected user');
+            return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Successfully delete the selected user');
         } else{
-            return redirect(route('dashboard'))->with('ErrorMessage', 'Error while deleting the selected account');
+            return redirect(route('admin.dashboard'))->with('ErrorMessage', 'Error while deleting the selected account');
         }
     }
 

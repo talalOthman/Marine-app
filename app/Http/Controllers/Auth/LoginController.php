@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Http\Traits\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -28,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    
 
     /**
      * Create a new controller instance.
@@ -39,4 +40,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectTo() {
+        $userType = Auth::user()->userType; 
+        switch ($userType) {
+          case 'Admin':
+            return '/admin_dashboard';
+            break;
+          case 'Student':
+            return '/student_dashboard';
+            break; 
+      
+          default:
+            return '/public_dashboard'; 
+          break;
+        }
+      }
 }

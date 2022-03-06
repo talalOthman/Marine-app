@@ -22,18 +22,22 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('/');
+// Route::get('/', [HomeController::class, 'index'])->name('/');
+
+Route::get('/', [LoginController::class, 'showLoginForm']);
 
 // Add Account Routes...
-Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('add-account');
-Route::post('/add-account', [RegisterController::class, 'register']);
+Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('admin.add-account')->middleware('admin');
+Route::post('/add-account', [RegisterController::class, 'register'])->middleware('admin');
 
 // Update Account Routes...
-Route::get('/update-account', [HomeController::class, 'redirectUpdateAccount'])->name('update-account');
-Route::post('/update-account', [UserController::class, 'update']);
+Route::get('/update_account', [HomeController::class, 'redirectUpdateAccount'])->name('update-account');
+Route::post('/update_account', [UserController::class, 'update']);
 
 // Dashboard Route...
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/admin_dashboard', [HomeController::class, 'AdminIndex'])->name('admin.dashboard')->middleware('admin');
+Route::get('/student_dashboard', [HomeController::class, 'StudentIndex'])->name('student.dashboard')->middleware('student');
+Route::get('/public_dashboard', [HomeController::class, 'PublicIndex'])->name('public.dashboard')->middleware('public');
 
 // Login Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -43,11 +47,11 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Delete User Route...
-Route::get('/delete/{userId}', [UserController::class, 'deleteUser'])->name('delete-user');
+Route::get('/admin_delete/{userId}', [UserController::class, 'deleteUser'])->name('admin.delete-user')->middleware('admin');
 
 // Update Specific Account Route...
-Route::get('/update-account/{userId}', [HomeController::class, 'RedirectUpdateSpecificAccount'])->name('update-specific-account');
-Route::post('/update-account/{userId}', [UserController::class, 'UpdateSpecificAccount']);
+Route::get('/update_account/{userId}', [HomeController::class, 'RedirectUpdateSpecificAccount'])->name('admin.update-specific-account')->middleware('admin');
+Route::post('/update_account/{userId}', [UserController::class, 'UpdateSpecificAccount'])->middleware('admin');
 // Registration Routes...
 // Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 // Route::post('register', [RegisterController::class, 'register']);

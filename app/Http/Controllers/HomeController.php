@@ -25,26 +25,37 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function AdminIndex()
     {
-        if(Auth::user()){
+        if (Auth::user()) {
             $users = User::where('id', '!=', Auth::id())->get();
-            return view('home')->with(['users' => $users]);
-        } else{
-            return view('auth.login');
+            return view('admin.dashboard')->with(['users' => $users]);
         }
     }
 
-    public function redirectAddAccount(){
-        return view('add_account');
+    public function StudentIndex()
+    {
+        return view('student.dashboard');
     }
 
-    public function redirectUpdateAccount(){
+    public function PublicIndex()
+    {
+        return view('public.dashboard');
+    }
+
+    public function redirectAddAccount()
+    {
+        return view('admin.add_account');
+    }
+
+    public function redirectUpdateAccount()
+    {
         return view('update_account');
     }
 
-    public function redirectUpdateSpecificAccount($userId){
+    public function redirectUpdateSpecificAccount($userId)
+    {
         $user = User::find($userId);
-        return view('update_specific_account')->with(['user' => $user]);
+        return view('admin.update_specific_account')->with(['user' => $user]);
     }
 }
