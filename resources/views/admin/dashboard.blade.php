@@ -41,9 +41,8 @@
                             @endif
                             <td>{{$user->userName}} </td>
                             <td>{{$user->userType}} </td>
-                            <!-- <td> <a href="{{route('delete-user', $user->id)}}"><i class="fas fa-times-circle fa-lg action"></i></a> -->
                             <td> <a href="#deleteModal" id="trigger-btn" class="trigger-btn" data-toggle="modal" data-id="{{$user->id}}"><i class="fas fa-times-circle fa-lg action"></i></a>
-                                <a href="{{route('update-specific-account', $user->id)}}"><i class="fas fa-user-edit fa-lg action"></i></a>
+                                <a href="{{route('admin.update-specific-account', $user->id)}}"><i class="fas fa-user-edit fa-lg action"></i></a>
                             </td>
                         </tr>
                         @endforeach

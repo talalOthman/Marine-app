@@ -3,7 +3,7 @@
 @section('content')
 
 
-<form method="POST" class="container-add-account" action="{{ route('add-account') }}" enctype="multipart/form-data">
+<form method="POST" class="container-add-account" action="{{ route('admin.add-account') }}" enctype="multipart/form-data">
     @csrf
     <div class="image">
         <img class="image-item" id="preview-image-before-upload" src="{{ asset('images/default.jpeg') }}" alt="{{ Auth::user()->name}}">

@@ -3,7 +3,7 @@
 @section('content')
 
 
-<form method="POST" class="container-add-account" action="{{ route('update-specific-account', $user->id) }}" enctype="multipart/form-data">
+<form method="POST" class="container-add-account" action="{{ route('admin.update-specific-account', $user->id) }}" enctype="multipart/form-data">
     @csrf
     <div class="image">
         @if($user->has_image == 0)
