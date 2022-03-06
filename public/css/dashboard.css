@@ -138,3 +138,11 @@ select:focus{
     align-items: center;
 }
 
+.theme-color{
+    color: #5256AD !important;
+}
+
+.modal-confirm .icon-box{
+    border: 3px solid #5256AD !important;
+}
+
