@@ -21,7 +21,7 @@
     <script src="https://kit.fontawesome.com/25adcc2111.js" crossorigin="anonymous" defer></script>
     <script src="{{ asset('js/image-preview.js') }}" defer></script>
     <script src="{{ asset('js/custom-datatable.js') }}" defer></script>
-    <!-- Datatables -->
+    <script src="{{ asset('js/modal.js') }}" defer></script>
 
 
     <!-- Fonts -->

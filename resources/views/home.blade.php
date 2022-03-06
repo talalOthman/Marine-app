@@ -41,8 +41,8 @@
                             @endif
                             <td>{{$user->userName}} </td>
                             <td>{{$user->userType}} </td>
-                            <td> <a href="{{route('delete-user', $user->id)}}"><i class="fas fa-times-circle fa-lg action"></i></a>
-                            <!-- <td> <a href="{{route('delete-user', $user->id)}}" class="trigger-btn" data-toggle="modal"><i class="fas fa-times-circle fa-lg action"></i></a> -->
+                            <!-- <td> <a href="{{route('delete-user', $user->id)}}"><i class="fas fa-times-circle fa-lg action"></i></a> -->
+                            <td> <a href="#deleteModal" id="trigger-btn" class="trigger-btn" data-toggle="modal" data-id="{{$user->id}}"><i class="fas fa-times-circle fa-lg action"></i></a>
                                 <a href="{{route('update-specific-account', $user->id)}}"><i class="fas fa-user-edit fa-lg action"></i></a>
                             </td>
                         </tr>
@@ -70,7 +70,7 @@
             </div>
             <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a href="" class="btn btn-danger button">Delete</a>
+                <a class="btn btn-danger button" id="delete-button">Delete</a>
             </div>
         </div>
     </div>
