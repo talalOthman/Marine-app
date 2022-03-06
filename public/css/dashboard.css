@@ -39,6 +39,11 @@ input:focus {
   	border: 1px solid #5256AD !important;
 }
 
+select:focus{
+    outline: none;
+  	border: 1px solid #5256AD !important;
+}
+
 
 .action{
     margin-left: 1rem;
