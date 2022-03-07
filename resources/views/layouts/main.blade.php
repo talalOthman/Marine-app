@@ -22,8 +22,8 @@
     <script src="{{ asset('js/image-preview.js') }}" defer></script>
     <script src="{{ asset('js/custom-datatable.js') }}" defer></script>
     <script src="{{ asset('js/modal.js') }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/6.0.0-beta.2/dropzone-min.min.js" integrity="sha512-ALYIaHxbPRTWdNH4oNgOY8QUEVxukOdn2e/Z4dXcGGnY0mHGg4556b6sWH7KMEDzEMG9V9tvXZoYk21s7FMz2A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js" defer></script>
+    <script src="{{ asset('js/dropzone.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -41,8 +41,8 @@
     <link href="{{ asset('css/navbar-custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/add-account.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/6.0.0-beta.2/basic.min.css" integrity="sha512-MeagJSJBgWB9n+Sggsr/vKMRFJWs+OUphiDV7TJiYu+TNQD9RtVJaPDYP8hA/PAjwRnkdvU+NsTncYTKlltgiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
 
 
     <!-- Favicon -->
