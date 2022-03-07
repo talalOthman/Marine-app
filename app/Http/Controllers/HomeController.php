@@ -58,4 +58,8 @@ class HomeController extends Controller
         $user = User::find($userId);
         return view('admin.update_specific_account')->with(['user' => $user]);
     }
+
+    public function redirectUploadFile(){
+        return view('student.upload-file');
+    }
 }

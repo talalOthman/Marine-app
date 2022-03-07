@@ -52,9 +52,10 @@ Route::get('/admin_delete/{userId}', [UserController::class, 'deleteUser'])->nam
 // Update Specific Account Route...
 Route::get('/update_account/{userId}', [HomeController::class, 'RedirectUpdateSpecificAccount'])->name('admin.update-specific-account')->middleware('admin');
 Route::post('/update_account/{userId}', [UserController::class, 'UpdateSpecificAccount'])->middleware('admin');
-// Registration Routes...
-// Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-// Route::post('register', [RegisterController::class, 'register']);
+
+// Upload File Route...
+Route::get('/upload_file', [HomeController::class, 'redirectUploadFile'])->name('student.upload-file')->middleware('student');
+
 
 // Password Reset Routes...
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
