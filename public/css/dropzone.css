@@ -34,3 +34,24 @@
     background-color: #5256AD !important;
 }
 
+.dz-max-files-reached {
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+
+
+.preview-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    height: 20rem;
+}
+
+.generate-report-btn{
+    pointer-events: auto !important;
+    color: white !important;
+}
+
+

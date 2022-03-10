@@ -20,9 +20,9 @@
                 </button>
             </div>
             @endif
-            <form method="POST" class="dropzone dropzone-previews dz-clickable dropzone-container" id="upload-file" action="/ajax_file_upload_handler/" enctype="multipart/form-data">
+            <form method="POST" class="dropzone dropzone-container" id="dropzone" action="{{url('/upload_file')}}" enctype="multipart/form-data">
                 @csrf
-                <div class="dz-message dz-default">
+                <div class="dz-default dz-message">
                     <i class="fas fa-cloud-upload-alt icon fa-7x"></i>
                     <div class="text-container">
                         <h4 class="text-drag">Drag & Drop to Upload File</h4>
@@ -38,7 +38,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+<!-- <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script> -->
 
 
 @endsection
