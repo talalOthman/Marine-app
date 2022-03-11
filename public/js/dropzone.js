@@ -31,7 +31,7 @@ Dropzone.options.dropzone =
     //~ var time = dt.getTime();
     //~ return time+"-"+file.name;    // to rename file name but i didn't use it. i renamed file with php in controller.
     //~ },
-    acceptedFiles: ".jpeg,.jpg,.png,.gif",
+    acceptedFiles: ".csv,.xlsx",
     timeout: 50000,
     init: function () {
 
