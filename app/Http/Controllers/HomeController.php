@@ -25,6 +25,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function index()
+    {
+        if (Auth::user()->userType == "Admin") {
+            $users = User::where('id', '!=', Auth::id())->get();
+            return redirect()->route('admin.dashboard', ['users' => $users]);
+        } elseif (Auth::user()->userType == "Student") {
+            return redirect()->route('student.dashboard');
+        } elseif (Auth::user()->userType == "Public") {
+            return redirect()->route('public.dashboard');
+        }
+    }
+
     public function AdminIndex()
     {
         if (Auth::user()) {
@@ -59,7 +72,8 @@ class HomeController extends Controller
         return view('admin.update_specific_account')->with(['user' => $user]);
     }
 
-    public function redirectUploadFile(){
+    public function redirectUploadFile()
+    {
         return view('student.upload-file');
     }
 }

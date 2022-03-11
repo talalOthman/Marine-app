@@ -25,6 +25,9 @@
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js" defer></script>
     <script src="{{ asset('js/dropzone.js') }}" defer></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js" defer></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" defer></script>
+    <script src="{{ asset('js/loading.js') }}" defer></script>
+
 
 
     <!-- Fonts -->
@@ -46,6 +49,7 @@
     <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
     <!-- <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
+    <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
 
 
     <!-- Favicon -->
@@ -53,6 +57,7 @@
 </head>
 
 <body class="sb-nav-fixed">
+    <div id="cover"></div>
     <div id="app">
 
         <nav class="sb-topnav navbar navbar-expand navbarColor">
@@ -106,7 +111,7 @@
                             <a class="nav-link" href="">Density of Traffic</a>
                             <a class="nav-link" href="">Vessel Details</a>
                             @endif
-                            
+
                             <a class="nav-link" href="{{ route('update-account') }}">Update Account</a>
 
                         </div>

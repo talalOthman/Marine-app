@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Login Controller
     |--------------------------------------------------------------------------
@@ -22,38 +22,41 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+  use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    
+  /**
+   * Where to redirect users after login.
+   *
+   * @var string
+   */
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    $this->middleware('guest')->except('logout');
+  }
+
+  public function redirectTo()
+  {
+    $userType = Auth::user()->userType;
+    switch ($userType) {
+      case "Admin":
+        return '/admin_dashboard';
+        break;
+      case "Student":
+        return '/student_dashboard';
+        break;
+      case "Public":
+        return '/public_dashboard';
+        break;
+      default:
+        return '/login';
+        break;
     }
-
-    public function redirectTo() {
-        $userType = Auth::user()->userType; 
-        switch ($userType) {
-          case 'Admin':
-            return '/admin_dashboard';
-            break;
-          case 'Student':
-            return '/student_dashboard';
-            break; 
-      
-          default:
-            return '/public_dashboard'; 
-          break;
-        }
-      }
+  }
 }

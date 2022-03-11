@@ -23,9 +23,9 @@ use App\Http\Controllers\UploadFileController;
 |
 */
 
-// Route::get('/', [HomeController::class, 'index'])->name('/');
+Route::get('/', [HomeController::class, 'index'])->name('/');
 
-Route::get('/', [LoginController::class, 'showLoginForm']);
+// Route::get('/', [LoginController::class, 'showLoginForm']);
 
 // Add Account Routes...
 Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('admin.add-account')->middleware('admin');

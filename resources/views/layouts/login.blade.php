@@ -11,6 +11,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer></script>
+    <script src="{{ asset('js/loading.js') }}" defer></script>
+    
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,11 +23,15 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
+
+    
 
     <!-- Favicon -->
     <link rel="icon" href="{{ url('images/favicon.png') }}">
 </head>
 <body>
+<div id="cover"></div>
     <div id="app">
         <main>
             @yield('content')
