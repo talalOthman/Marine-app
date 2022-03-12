@@ -58,6 +58,9 @@ Route::post('/update_account/{userId}', [UserController::class, 'UpdateSpecificA
 Route::get('/upload_file', [HomeController::class, 'redirectUploadFile'])->name('student.upload-file')->middleware('student');
 Route::post('/upload_file', [UploadFileController::class, 'uploadFile'])->middleware('student');
 
+// Generate Report Route...
+Route::get('/generate_report', [UploadFileController::class, 'generateReport'])->middleware('student');
+
 
 
 

@@ -21,12 +21,12 @@
     <script src="https://kit.fontawesome.com/25adcc2111.js" crossorigin="anonymous" defer></script>
     <script src="{{ asset('js/image-preview.js') }}" defer></script>
     <script src="{{ asset('js/custom-datatable.js') }}" defer></script>
-    <script src="{{ asset('js/modal.js') }}" defer></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js" defer></script>
     <script src="{{ asset('js/dropzone.js') }}" defer></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js" defer></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" defer></script>
     <script src="{{ asset('js/loading.js') }}" defer></script>
+    <script src="{{ asset('js/modal.js') }}" defer></script>
 
 
 

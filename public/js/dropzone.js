@@ -22,7 +22,7 @@ Dropzone.options.dropzone =
 {
     previewTemplate: `<div class="preview-container">
     <i class="fas fa-file-download icon fa-9x"></i>
-    <a class="generate-report-btn btn btn-primary button-item button">Generate Report</a>
+    <a href="/generate_report" class="generate-report-btn btn btn-primary button-item button">Generate Report</a>
     </div>`,
     maxFiles: 1,
     maxFilesize: 4,
