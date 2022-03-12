@@ -41,35 +41,34 @@
                             @endif
                             <td>{{$user->userName}} </td>
                             <td>{{$user->userType}} </td>
-                            <td> <a href="#deleteModal" id="trigger-btn" class="trigger-btn" data-toggle="modal" data-id="{{$user->id}}"><i class="fas fa-times-circle fa-lg action"></i></a>
+                            <td> <a href="#deleteModal_{{$user->id}}" id="trigger-btn" class="trigger-btn" data-toggle="modal"><i class="fas fa-times-circle fa-lg action"></i></a>
                                 <a href="{{route('admin.update-specific-account', $user->id)}}"><i class="fas fa-user-edit fa-lg action"></i></a>
                             </td>
                         </tr>
+                        <!-- Delete Modal -->
+                        <div id="deleteModal_{{$user->id}}" class="modal fade">
+                            <div class="modal-dialog modal-confirm">
+                                <div class="modal-content">
+                                    <div class="modal-header flex-column">
+                                        <div class="icon-box">
+                                            <i class="material-icons theme-color">&#xE5CD;</i>
+                                        </div>
+                                        <h4 class="modal-title w-100">Are you sure?</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Do you really want to delete this user? This process cannot be undone.</p>
+                                    </div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="{{route('admin.delete-user', $user->id)}}"class="btn btn-danger button" id="delete-button">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Delete Modal -->
-<div id="deleteModal" class="modal fade">
-    <div class="modal-dialog modal-confirm">
-        <div class="modal-content">
-            <div class="modal-header flex-column">
-                <div class="icon-box">
-                    <i class="material-icons theme-color">&#xE5CD;</i>
-                </div>
-                <h4 class="modal-title w-100">Are you sure?</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Do you really want to delete this user? This process cannot be undone.</p>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger button" id="delete-button">Delete</a>
             </div>
         </div>
     </div>
