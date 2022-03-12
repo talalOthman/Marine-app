@@ -105,7 +105,7 @@
                             <a class="nav-link" href="{{ route('admin.add-account') }}">Add Account</a>
                             @elseif(Auth::user()->userType == "Student")
                             <a class="nav-link" href="{{route('student.dashboard')}}">Dashboard</a>
-                            <a class="nav-link" href="{{route('student.upload-file')}}">Upload File</a>
+                            <a class="nav-link" href="{{route('student.upload-file')}}">Generate Report</a>
                             @else
                             <a class="nav-link" href="{{route('public.dashboard')}}">Dashboard</a>
                             <a class="nav-link" href="">Density of Traffic</a>
