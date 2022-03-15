@@ -31,12 +31,13 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        '38ea50801e981fa2297115e1c44a148b' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -122,6 +123,7 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
         array (
             'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
+            'Mckenziearts\\Notify\\' => 20,
             'Matrix\\' => 7,
             'Maatwebsite\\Excel\\' => 18,
         ),
@@ -394,6 +396,10 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Mckenziearts\\Notify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src',
+        ),
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
@@ -569,6 +575,7 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\UsersExport' => __DIR__ . '/../..' . '/app/Exports/UsersExport.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -599,6 +606,7 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
         'App\\Http\\Traits\\SendsPasswordResetEmails' => __DIR__ . '/../..' . '/app/Http/Traits/SendsPasswordResetEmails.php',
         'App\\Http\\Traits\\ThrottlesLogins' => __DIR__ . '/../..' . '/app/Http/Traits/ThrottlesLogins.php',
         'App\\Http\\Traits\\VerifiesEmails' => __DIR__ . '/../..' . '/app/Http/Traits/VerifiesEmails.php',
+        'App\\Imports\\UsersImport' => __DIR__ . '/../..' . '/app/Imports/UsersImport.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -3518,6 +3526,12 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
         'Matrix\\Operators\\Multiplication' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Multiplication.php',
         'Matrix\\Operators\\Operator' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Operator.php',
         'Matrix\\Operators\\Subtraction' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operators/Subtraction.php',
+        'Mckenziearts\\Notify\\Exceptions\\MissingPresetNotificationException' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Exceptions/MissingPresetNotificationException.php',
+        'Mckenziearts\\Notify\\Facades\\LaravelNotify' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Facades/LaravelNotify.php',
+        'Mckenziearts\\Notify\\LaravelNotify' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/LaravelNotify.php',
+        'Mckenziearts\\Notify\\LaravelNotifyServiceProvider' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/LaravelNotifyServiceProvider.php',
+        'Mckenziearts\\Notify\\NotifyComponent' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/NotifyComponent.php',
+        'Mckenziearts\\Notify\\Storage\\Session' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Storage/Session.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',

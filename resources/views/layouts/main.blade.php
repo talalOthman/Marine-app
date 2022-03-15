@@ -27,6 +27,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" defer></script>
     <script src="{{ asset('js/loading.js') }}" defer></script>
     <script src="{{ asset('js/modal.js') }}" defer></script>
+    <script src="{{ asset('js/student-dashboard.js') }}" defer></script>
+
 
 
 
@@ -50,16 +52,20 @@
     <!-- <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
     <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link href="{{ asset('css/student-dashboard.css') }}" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    @notifyCss
+    <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="{{ url('images/favicon.png') }}">
 </head>
 
 <body class="sb-nav-fixed">
+    @include('notify::components.notify')
+    <x:notify-messages  class="notification"/>
     <div id="cover"></div>
     <div id="app">
-
         <nav class="sb-topnav navbar navbar-expand navbarColor">
             <!-- Navbar Brand-->
             @if(Auth::user()->userType == "Admin")
@@ -132,8 +138,8 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
         <script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
-
-
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
         <script>
             $('#datatablesSimple').DataTable({
                 "lengthMenu": [8],
@@ -148,6 +154,8 @@
 
             $('#datatablesSimple').setRowHeight(8);
         </script>
+        @notifyJs
+
 
 </body>
 

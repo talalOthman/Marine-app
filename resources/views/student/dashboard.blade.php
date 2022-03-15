@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @if(session()->has('SuccessMessage'))
+            <!-- @if(session()->has('SuccessMessage'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session()->get('SuccessMessage') }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -19,19 +19,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @endif
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    {{ __('Hello Student User, You are logged in!') }}
-                </div>
+            @endif -->
+            <div class="map-container">
+            <div id="map"></div>
+            </div>
             </div>
         </div>
     </div>

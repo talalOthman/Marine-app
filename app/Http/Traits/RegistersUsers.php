@@ -7,6 +7,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mckenziearts\Notify\LaravelNotifyServiceProvider;
+use Illuminate\Notifications\Notifiable;
 
 trait RegistersUsers
 {
@@ -37,7 +39,7 @@ trait RegistersUsers
         if ($response = $this->registered($request, $user)) {
             return $response;
         }
-        
+        notify()->success('New Account Added!');
         return $request->wantsJson()
                     ? new JsonResponse([], 201)
                     : redirect(route('admin.dashboard'))->with('SuccessMessage', 'Successfully added a user account!');

@@ -48,32 +48,39 @@ class UserController extends Controller
         }
 
         if ($req->userName == null) {
-            if($user->userType == "Admin"){
-                return redirect(route('admin.dashboard'))->with('ErrorMessage', 'Error while updating account details');
-            }elseif($user->userType == "Student"){
-                return redirect(route('student.dashboard'))->with('ErrorMessage', 'Error while updating account details');
-            }else{
-                return redirect(route('public.dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            if ($user->userType == "Admin") {
+                notify()->error('A Problem Occurred While Updating Account');
+                return redirect(route('admin.dashboard'));
+            } elseif ($user->userType == "Student") {
+                notify()->error('A Problem Occurred While Updating Account');
+                return redirect(route('student.dashboard'));
+            } else {
+                notify()->error('A Problem Occurred While Updating Account');
+                return redirect(route('public.dashboard'));
             }
         }
 
         $user->userName = $req->userName;
-        if(!is_null($req->password)){
+        if (!is_null($req->password)) {
             $user->password = Hash::make($req->password);
         }
         $user->save();
 
 
-        if($user->userType == "Admin"){
-            return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
-        }elseif($user->userType == "Student"){
-            return redirect(route('student.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
-        }else{
-            return redirect(route('public.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        if ($user->userType == "Admin") {
+            notify()->success('Updated Account Details Successfully!');
+            return redirect(route('admin.dashboard'));
+        } elseif ($user->userType == "Student") {
+            notify()->success('Updated Account Details Successfully!');
+            return redirect(route('student.dashboard'));
+        } else {
+            notify()->success('Updated Account Details Successfully!');
+            return redirect(route('public.dashboard'));
         }
     }
 
-    public function UpdateSpecificAccount(Request $req, $userId){
+    public function UpdateSpecificAccount(Request $req, $userId)
+    {
         // Validate the data submitted by user
         $validator = Validator::make($req->all(), [
             'userName' => ['required', 'string', 'max:255', 'unique:users'],
@@ -102,7 +109,7 @@ class UserController extends Controller
         }
 
         $user->userName = $req->userName;
-        if(!is_null($req->password)){
+        if (!is_null($req->password)) {
             $user->password = Hash::make($req->password);
         }
         $user->save();
@@ -112,14 +119,16 @@ class UserController extends Controller
         return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
     }
 
-    public function deleteUser($userId){
+    public function deleteUser($userId)
+    {
         $user = User::find($userId);
-        
-        if($user->delete()){
-            return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Successfully delete the selected user');
-        } else{
-            return redirect(route('admin.dashboard'))->with('ErrorMessage', 'Error while deleting the selected account');
+
+        if ($user->delete()) {
+            notify()->success('Delete Account Successfully!');
+            return redirect(route('admin.dashboard'));
+        } else {
+            notify()->error('A Problem Occured While Deleting Selected Account');
+            return redirect(route('admin.dashboard'));
         }
     }
-
 }

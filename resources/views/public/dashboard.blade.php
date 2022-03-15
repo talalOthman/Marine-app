@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @if(session()->has('SuccessMessage'))
+            <!-- @if(session()->has('SuccessMessage'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session()->get('SuccessMessage') }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -19,7 +19,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @endif
+            @endif -->
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 

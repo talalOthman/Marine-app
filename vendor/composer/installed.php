@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '393ae6476833d0e08ef27571e01f382d042a0315',
+        'reference' => '26a4d69c1ad6aeded21829fbcfa7790f941f8587',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -409,7 +409,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '393ae6476833d0e08ef27571e01f382d042a0315',
+            'reference' => '26a4d69c1ad6aeded21829fbcfa7790f941f8587',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -527,6 +527,15 @@
             'install_path' => __DIR__ . '/../markbaker/matrix',
             'aliases' => array(),
             'reference' => 'c66aefcafb4f6c269510e9ac46b82619a904c576',
+            'dev_requirement' => false,
+        ),
+        'mckenziearts/laravel-notify' => array(
+            'pretty_version' => 'v2.2',
+            'version' => '2.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mckenziearts/laravel-notify',
+            'aliases' => array(),
+            'reference' => '685c151af8930949c0f4623a618b97f669e48799',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(

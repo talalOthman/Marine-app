@@ -78,7 +78,6 @@ class RegisterController extends Controller
             $user->has_image = 1;
         }
         $user->save();
-
         return $user;
     }
 }
