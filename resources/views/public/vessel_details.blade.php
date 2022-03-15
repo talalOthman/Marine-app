@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        <!-- @endforeach -->
                     </tbody>
                 </table>
             </div>

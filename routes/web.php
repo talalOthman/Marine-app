@@ -64,7 +64,8 @@ Route::get('/generate_report', [UploadFileController::class, 'generateReport'])-
 // Density Of Traffic Route...
 Route::get('/density_of_traffic', [HomeController::class, 'redirectDensityOfTraffic'])->name('public.density-of-traffic')->middleware('public');
 
-
+// Vessel Details Route...
+Route::get('/vessel_details', [HomeController::class, 'redirectVesselDetails'])->name('public.vessel-details')->middleware('public');
 
 
 

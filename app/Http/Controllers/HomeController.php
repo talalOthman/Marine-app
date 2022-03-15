@@ -80,4 +80,8 @@ class HomeController extends Controller
     public function redirectDensityOfTraffic(){
         return view('public.density_of_traffic');
     }
+
+    public function redirectVesselDetails(){
+        return view('public.vessel_details');
+    }
 }

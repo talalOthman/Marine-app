@@ -113,7 +113,7 @@
                             @else
                             <a class="nav-link" href="{{route('public.dashboard')}}">Dashboard</a>
                             <a class="nav-link" href="{{route('public.density-of-traffic')}}">Density of Traffic</a>
-                            <a class="nav-link" href="">Vessel Details</a>
+                            <a class="nav-link" href="{{route('public.vessel-details')}}">Vessel Details</a>
                             @endif
 
                             <a class="nav-link" href="{{ route('update-account') }}">Update Account</a>
