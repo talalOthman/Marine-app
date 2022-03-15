@@ -105,7 +105,8 @@ class UserController extends Controller
         }
 
         if ($req->userName == null) {
-            return redirect(route('admin.dashboard'))->with('ErrorMessage', 'Error while updating account details');
+            notify()->error('A Problem Occurred While Updating Account');
+            return redirect(route('admin.dashboard'));
         }
 
         $user->userName = $req->userName;
@@ -116,7 +117,8 @@ class UserController extends Controller
 
 
 
-        return redirect(route('admin.dashboard'))->with('SuccessMessage', 'Updated account details successfully');
+        notify()->success('Updated Account Details Successfully!');
+        return redirect(route('admin.dashboard'));
     }
 
     public function deleteUser($userId)
