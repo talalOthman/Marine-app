@@ -76,4 +76,8 @@ class HomeController extends Controller
     {
         return view('student.upload-file');
     }
+
+    public function redirectDensityOfTraffic(){
+        return view('public.density_of_traffic');
+    }
 }

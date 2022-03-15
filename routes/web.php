@@ -61,6 +61,10 @@ Route::post('/upload_file', [UploadFileController::class, 'uploadFile'])->middle
 // Generate Report Route...
 Route::get('/generate_report', [UploadFileController::class, 'generateReport'])->middleware('student');
 
+// Density Of Traffic Route...
+Route::get('/density_of_traffic', [HomeController::class, 'redirectDensityOfTraffic'])->name('public.density-of-traffic')->middleware('public');
+
+
 
 
 

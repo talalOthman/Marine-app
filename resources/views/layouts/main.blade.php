@@ -27,9 +27,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" defer></script>
     <script src="{{ asset('js/loading.js') }}" defer></script>
     <script src="{{ asset('js/modal.js') }}" defer></script>
-    <script src="{{ asset('js/student-dashboard.js') }}" defer></script>
-
-
 
 
     <!-- Fonts -->
@@ -57,6 +54,7 @@
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
     @notifyCss
     <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/density-of-traffic.css') }}" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="{{ url('images/favicon.png') }}">
 </head>
@@ -114,7 +112,7 @@
                             <a class="nav-link" href="{{route('student.upload-file')}}">Generate Report</a>
                             @else
                             <a class="nav-link" href="{{route('public.dashboard')}}">Dashboard</a>
-                            <a class="nav-link" href="">Density of Traffic</a>
+                            <a class="nav-link" href="{{route('public.density-of-traffic')}}">Density of Traffic</a>
                             <a class="nav-link" href="">Vessel Details</a>
                             @endif
 
