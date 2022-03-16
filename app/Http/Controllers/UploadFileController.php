@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Exports\UsersExport;
+use App\Imports\VesselsImport;
 
 class UploadFileController extends Controller
 {
@@ -20,7 +21,7 @@ class UploadFileController extends Controller
             // $extension = $file->getClientOriginalExtension();
             // $file_name  = time() . '.' . $extension;
             // $file->move(base_path('public/test/'), $file_name);
-            Excel::import(new UsersImport, request()->file('file'));
+            Excel::import(new VesselsImport, request()->file('file'));
         }
     }
 

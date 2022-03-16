@@ -1,6 +1,7 @@
 <?php
 
 namespace Illuminate\Database\Eloquent\Factories;
+use Database\Factories\VesselFactory;
 
 trait HasFactory
 {
@@ -26,6 +27,6 @@ trait HasFactory
      */
     protected static function newFactory()
     {
-        //
+        return VesselFactory::new();
     }
 }

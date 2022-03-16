@@ -608,6 +608,7 @@ class ComposerStaticInitf119cef3fb964e9ddef0dcbd26d0356f
         'App\\Http\\Traits\\VerifiesEmails' => __DIR__ . '/../..' . '/app/Http/Traits/VerifiesEmails.php',
         'App\\Imports\\UsersImport' => __DIR__ . '/../..' . '/app/Imports/UsersImport.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Vessel' => __DIR__ . '/../..' . '/app/Models/Vessel.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

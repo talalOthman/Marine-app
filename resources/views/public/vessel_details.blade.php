@@ -8,49 +8,21 @@
                 <table id="datatablesSimple" class="display table table-striped table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Avatar</th>
-                            <th>Username</th>
-                            <th>Usertype</th>
-                            <th>Actions</th>
+                            <th>Vessel Type</th>
+                            <th>Call Name</th>
+                            <th>MMSI</th>
+                            <th>Cargo</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($users as $user)
+                        @foreach($vessels as $vessel)
                         <tr>
-
-                            @if($user->has_image == false)
-                            <td><img src="{{ asset('images/default.jpeg') }}" alt="{{ $user->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></td>
-                            @else
-                            <td><img src="{{ asset('images/avatars/'.$user->avatar) }}" alt="{{ $user->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></td>
-                            @endif
-                            <td>{{$user->userName}} </td>
-                            <td>{{$user->userType}} </td>
-                            <td> <a href="#deleteModal_{{$user->id}}" id="trigger-btn" class="trigger-btn" data-toggle="modal"><i class="fas fa-times-circle fa-lg action"></i></a>
-                                <a href="{{route('admin.update-specific-account', $user->id)}}"><i class="fas fa-user-edit fa-lg action"></i></a>
-                            </td>
+                            <td>{{$vessel->type}} </td>
+                            <td>{{$vessel->callName}} </td>
+                            <td>{{$vessel->MMSI}} </td>
+                            <td>{{$vessel->cargo}} </td>
                         </tr>
-                        <!-- Delete Modal -->
-                        <div id="deleteModal_{{$user->id}}" class="modal fade">
-                            <div class="modal-dialog modal-confirm">
-                                <div class="modal-content">
-                                    <div class="modal-header flex-column">
-                                        <div class="icon-box">
-                                            <i class="material-icons theme-color">&#xE5CD;</i>
-                                        </div>
-                                        <h4 class="modal-title w-100">Are you sure?</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Do you really want to delete this user? This process cannot be undone.</p>
-                                    </div>
-                                    <div class="modal-footer justify-content-center">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <a href="{{route('admin.delete-user', $user->id)}}"class="btn btn-danger button" id="delete-button">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- @endforeach -->
+                        @endforeach
                     </tbody>
                 </table>
             </div>

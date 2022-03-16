@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Vessel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -77,11 +78,14 @@ class HomeController extends Controller
         return view('student.upload-file');
     }
 
-    public function redirectDensityOfTraffic(){
+    public function redirectDensityOfTraffic()
+    {
         return view('public.density_of_traffic');
     }
 
-    public function redirectVesselDetails(){
-        return view('public.vessel_details');
+    public function redirectVesselDetails()
+    {
+        $vessels = Vessel::all();
+        return view('public.vessel_details')->with(['vessels' => $vessels]);
     }
 }
