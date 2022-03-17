@@ -4,8 +4,26 @@
     border-radius: 5px;
     border: 2px dashed #5256AD !important;
     border-image: none;
-    height: 44rem;
+    margin-top: 2rem;
+    /* max-height: 95rem; */
+	height: 100%; 
+    width: 80vw !important;
 } 
+
+.main-container{
+	display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 87vh;
+}
+
+.table-position{
+    margin-top: 2rem;
+    /* max-height: 95rem; */
+	height: 100%; 
+    width: 80vw !important;
+}
 
 .dropzone-container{
     display: flex;
