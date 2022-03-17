@@ -8,7 +8,7 @@
     --white-color: #F7F6FB;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
-    --z-fixed: 100000;
+    --z-fixed: 100;
 }
 
 *,
@@ -174,8 +174,8 @@ a, a:focus {
         padding: 1rem 1rem 0 0
     }
 
-    .show {
-        width: calc(var(--nav-width) + 156px)
+    .display {
+        width: calc(var(--nav-width) + 156px);
     }
 
     .body-pd {

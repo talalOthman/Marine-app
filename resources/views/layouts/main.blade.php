@@ -189,7 +189,7 @@
         $('#datatablesSimple').setRowHeight(8);
     </script>
     @notifyJs
-    <script src="{{ asset('js/navbar-reskin.js') }}"></script>
+    <script src="{{ asset('js/navbar-reskin.js') }}" defer></script>
 
 
 
