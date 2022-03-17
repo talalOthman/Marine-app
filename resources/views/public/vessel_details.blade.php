@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 table-container">
             <div class="table-responsive table-position">
                 <table id="datatablesSimple" class="display table table-striped table-hover" cellspacing="0" width="100%">
                     <thead>

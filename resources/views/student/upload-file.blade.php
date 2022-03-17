@@ -20,17 +20,19 @@
                 </button>
             </div>
             @endif
-            <form method="POST" class="dropzone dropzone-container" id="dropzone" action="{{url('/upload_file')}}" enctype="multipart/form-data">
-                @csrf
-                <div class="dz-default dz-message">
-                    <i class="fas fa-cloud-upload-alt icon fa-7x"></i>
-                    <div class="text-container">
-                        <h4 class="text-drag">Drag & Drop to Upload File</h4>
-                        <h4 class="text-or">OR</h4>
-                        <button class="browse-file-btn btn btn-primary button-item" id="browse-btn">Browse File</button>
+            <div class="height-100 bg-light">
+                <form method="POST" class="dropzone dropzone-container" id="dropzone" action="{{url('/upload_file')}}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="dz-default dz-message">
+                        <i class="fas fa-cloud-upload-alt icon fa-7x"></i>
+                        <div class="text-container">
+                            <h4 class="text-drag">Drag & Drop to Upload File</h4>
+                            <h4 class="text-or">OR</h4>
+                            <button class="browse-file-btn btn btn-primary button-item" id="browse-btn">Browse File</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>

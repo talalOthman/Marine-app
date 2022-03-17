@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="map-container">
-            <div id="map"></div>
+            <div id="map" class="height-100 bg-light"></div>
             </div>
             </div>
         </div>

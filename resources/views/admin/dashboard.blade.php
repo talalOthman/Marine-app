@@ -3,25 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <!-- @if(session()->has('SuccessMessage'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session()->get('SuccessMessage') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @endif
-            @if(session()->has('ErrorMessage'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session()->get('ErrorMessage') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @endif -->
+        <div class="col-md-8 table-container">
             <div class="table-responsive table-position">
-                <table id="datatablesSimple" class="display table table-striped table-hover" cellspacing="0" width="100%">
+                <table id="datatablesSimple" class="display table table-striped table-hover" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Avatar</th>
@@ -35,9 +19,9 @@
                         <tr>
 
                             @if($user->has_image == false)
-                            <td><img src="{{ asset('images/default.jpeg') }}" alt="{{ $user->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></td>
+                            <td><img class="admin-img" src="{{ asset('images/default.jpeg') }}" alt="{{ $user->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></td>
                             @else
-                            <td><img src="{{ asset('images/avatars/'.$user->avatar) }}" alt="{{ $user->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></td>
+                            <td><img class="admin-img" src="{{ asset('images/avatars/'.$user->avatar) }}" alt="{{ $user->name}}" onerror="this.src='/images/default.jpeg';" class="profile-pic"></td>
                             @endif
                             <td>{{$user->userName}} </td>
                             <td>{{$user->userType}} </td>
