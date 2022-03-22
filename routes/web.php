@@ -59,7 +59,10 @@ Route::get('/upload_file', [HomeController::class, 'redirectUploadFile'])->name(
 Route::post('/upload_file', [UploadFileController::class, 'uploadFile'])->middleware('student');
 
 // Generate Report Route...
-Route::get('/generate_report', [UploadFileController::class, 'generateReport'])->middleware('student');
+Route::get('/generate_report', [UploadFileController::class, 'generateReport'])->name('generate-report')->middleware('student');
+
+// Fetch Data from API Route...
+Route::get('/fetch_data', [UploadFileController::class, 'fetchVessels'])->middleware('student');
 
 // Density Of Traffic Route...
 Route::get('/density_of_traffic', [HomeController::class, 'redirectDensityOfTraffic'])->name('public.density-of-traffic')->middleware('public');

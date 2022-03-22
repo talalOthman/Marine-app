@@ -20,4 +20,9 @@ class Vessel extends Model
         'MMSI',
         'cargo',
     ];
+
+    public function scopeAllSpecific($query)
+    {
+        return $query->get(['type', 'callName', 'MMSI', 'cargo']);
+    }
 }
