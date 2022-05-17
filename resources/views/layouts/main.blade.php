@@ -57,6 +57,7 @@
     <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <link href="{{ asset('css/density-of-traffic.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-reskin.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/resumablejs@1.1.0/resumable.min.js" rrel='stylesheet' />
 
     <!-- Favicon -->
     <link rel="icon" href="{{ url('images/favicon.png') }}">
@@ -190,6 +191,8 @@
     </script>
     @notifyJs
     <script src="{{ asset('js/navbar-reskin.js') }}" defer></script>
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
 
 
 

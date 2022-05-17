@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="main-container">
                 <form method="POST" class="dropzone dropzone-container" id="dropzone" action="{{url('/upload_file')}}" enctype="multipart/form-data">
+                <!-- <form method="POST" action="{{url('/upload_file')}}" enctype="multipart/form-data"> -->
                     @csrf
                     <div class="dz-default dz-message">
                         <i class="fas fa-cloud-upload-alt icon fa-7x"></i>
@@ -15,6 +16,10 @@
                             <button class="browse-file-btn btn btn-primary button-item" id="browse-btn">Browse File</button>
                         </div>
                     </div>
+                    <!-- <input name="file" type="file" />
+                    <button type="submit" class="btn btn-primary button-item"> -->
+                        <!-- {{ __('Upload File') }}
+                    </button> -->
                 </form>
             </div>
         </div>

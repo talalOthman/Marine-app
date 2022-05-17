@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'cb98bb6bd0d3a21ae400f8fc2e50223346e33757',
+        'reference' => 'b008a1b7835df8f5374dca5c5552b8575cf0215d',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -409,7 +409,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'cb98bb6bd0d3a21ae400f8fc2e50223346e33757',
+            'reference' => 'b008a1b7835df8f5374dca5c5552b8575cf0215d',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -762,6 +762,15 @@
             'aliases' => array(),
             'reference' => '93d4bf4c37aec6384bb9e5d390d9049a463a7256',
             'dev_requirement' => true,
+        ),
+        'pion/laravel-chunk-upload' => array(
+            'pretty_version' => 'v1.5.0',
+            'version' => '1.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pion/laravel-chunk-upload',
+            'aliases' => array(),
+            'reference' => '37b20f1c8d4e8676f733ca98ef6d0309cbf94e74',
+            'dev_requirement' => false,
         ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',

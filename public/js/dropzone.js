@@ -5,23 +5,28 @@ browse.addEventListener('click', function (e) {
     e.preventDefault();
 })
 
+
 Dropzone.options.dropzone =
 {
     previewTemplate: `<div class="preview-container">
+    <div class="progress">
+    <div class="progress-bar progress-bar-primary" role="progressbar" data-dz-uploadprogress>
+        <span class="progress-text"></span>
+    </div>
+</div>
     <i class="fas fa-file-download icon fa-9x"></i>
     <a href="/generate_report" class="generate-report-btn btn btn-primary button-item button">Generate Report</a>
     </div>`,
-    maxFiles: 1,
-    maxFilesize: 4,
+    maxFiles: 1000000000000000000,
+    maxFilesize: 209715200,
     //~ renameFile: function(file) {
     //~ var dt = new Date();
     //~ var time = dt.getTime();
     //~ return time+"-"+file.name;    // to rename file name but i didn't use it. i renamed file with php in controller.
     //~ },
     acceptedFiles: ".csv,.xlsx",
-    timeout: 50000,
+    timeout: 0,
     init: function () {
-
         // Get images
         var myDropzone = this;
         $.ajax({
@@ -29,7 +34,7 @@ Dropzone.options.dropzone =
             type: 'GET',
             dataType: 'json',
             success: function (data) {
-                //console.log(data);
+                console.log(data);
                 $.each(data, function (key, value) {
 
                     var file = { name: value.name, size: value.size };
@@ -78,19 +83,30 @@ Dropzone.options.dropzone =
         file.previewElement.querySelector("img").alt = response.success;
         olddatadzname.innerHTML = response.success;
     },
-    error: function (file, response) {
-        if ($.type(response) === "string")
-            var message = response; //dropzone sends it's own error messages in string
-        else
-            var message = response.message;
-        file.previewElement.classList.add("dz-error");
-        _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
-        _results = [];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            node = _ref[_i];
-            _results.push(node.textContent = message);
+    uploadprogress: function(file, progress, bytesSent) {
+        if (file.previewElement) {
+            var progressElement = file.previewElement.querySelector("[data-dz-uploadprogress]");
+            progressElement.style.width = progress + "%";
+            progressElement.querySelector(".progress-text").textContent = progress + "%";
         }
-        return _results;
-    }
+    },
+    // error: function (file, response) {
+    //     if ($.type(response) === "string")
+    //         var message = response; //dropzone sends it's own error messages in string
+    //     else
+    //         var message = response.message;
+    //     file.previewElement.classList.add("dz-error");
+    //     _ref = file.previewElement.querySelectorAll("[data-dz-errormessage]");
+    //     _results = [];
+    //     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+    //         node = _ref[_i];
+    //         _results.push(node.textContent = message);
+    //     }
+    //     return _results;
+    // }
+
+
 
 };
+
+
