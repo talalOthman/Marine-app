@@ -72,6 +72,6 @@ class VesselsImport implements ToCollection, WithStartRow, WithChunkReading
 
     public function chunkSize(): int
     {
-        return 2000;
+        return 10000;
     }
 }

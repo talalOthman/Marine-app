@@ -27,6 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" defer></script>
     <script src="{{ asset('js/loading.js') }}" defer></script>
     <script src="{{ asset('js/modal.js') }}" defer></script>
+    <script src="{{ asset('js/upload-file.js') }}" defer></script>
 
 
     <!-- Fonts -->
@@ -57,6 +58,7 @@
     <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <link href="{{ asset('css/density-of-traffic.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-reskin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/upload-file.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/resumablejs@1.1.0/resumable.min.js" rrel='stylesheet' />
 
     <!-- Favicon -->
@@ -88,71 +90,71 @@
                                 @else
                                 <a href="{{route('public.dashboard')}}" class="nav_logo">
                                     @endif
-                            <i class='bx bxs-ship nav_logo-icon'></i>
-                            <span class="nav_logo-name">Marine App</span> </a>
-                        <div class="nav_list">
-                            @if(Auth::user()->userType == "Admin")
-                            @if($active == 'admin.dashboard')
-                            <a href="{{route('admin.dashboard')}}" class="nav_link active">
-                                @else
-                                <a href="{{route('admin.dashboard')}}" class="nav_link">
-                                    @endif
-                                    <i class='bx bx-grid-alt nav_icon'></i>
-                                    <span class="nav_name">Dashboard</span> </a>
-                                @if($active == 'admin.add_account')
-                                <a href="{{ route('admin.add-account') }}" class="nav_link active">
-                                    @else
-                                    <a href="{{ route('admin.add-account') }}" class="nav_link">
-                                        @endif
-                                        <i class='bx bx-user-plus nav_icon'></i>
-                                        <span class="nav_name">Add Account</span> </a>
-                                    @elseif(Auth::user()->userType == "Student")
-                                    @if($active == 'student.dashboard')
-                                    <a href="{{route('student.dashboard')}}" class="nav_link active">
+                                    <i class='bx bxs-ship nav_logo-icon'></i>
+                                    <span class="nav_logo-name">Marine App</span> </a>
+                                <div class="nav_list">
+                                    @if(Auth::user()->userType == "Admin")
+                                    @if($active == 'admin.dashboard')
+                                    <a href="{{route('admin.dashboard')}}" class="nav_link active">
                                         @else
-                                        <a href="{{route('student.dashboard')}}" class="nav_link">
+                                        <a href="{{route('admin.dashboard')}}" class="nav_link">
                                             @endif
                                             <i class='bx bx-grid-alt nav_icon'></i>
                                             <span class="nav_name">Dashboard</span> </a>
-                                        @if($active == 'student.upload_file')
-                                        <a href="{{route('student.upload-file')}}" class="nav_link active">
+                                        @if($active == 'admin.add_account')
+                                        <a href="{{ route('admin.add-account') }}" class="nav_link active">
                                             @else
-                                            <a href="{{route('student.upload-file')}}" class="nav_link">
+                                            <a href="{{ route('admin.add-account') }}" class="nav_link">
                                                 @endif
-                                                <i class='bx bxs-report nav_icon'></i>
-                                                <span class="nav_name">Generate Report</span> </a>
-                                            @else
-                                            @if($active == 'public.dashboard')
-                                            <a href="{{route('public.dashboard')}}" class="nav_link active">
+                                                <i class='bx bx-user-plus nav_icon'></i>
+                                                <span class="nav_name">Add Account</span> </a>
+                                            @elseif(Auth::user()->userType == "Student")
+                                            @if($active == 'student.dashboard')
+                                            <a href="{{route('student.dashboard')}}" class="nav_link active">
                                                 @else
-                                                <a href="{{route('public.dashboard')}}" class="nav_link">
+                                                <a href="{{route('student.dashboard')}}" class="nav_link">
                                                     @endif
                                                     <i class='bx bx-grid-alt nav_icon'></i>
                                                     <span class="nav_name">Dashboard</span> </a>
-                                                @if($active == 'public.density_of_traffic')
-                                                <a href="{{route('public.density-of-traffic')}}" class="nav_link active">
+                                                @if($active == 'student.upload_file')
+                                                <a href="{{route('student.upload-file')}}" class="nav_link active">
                                                     @else
-                                                    <a href="{{route('public.density-of-traffic')}}" class="nav_link">
+                                                    <a href="{{route('student.upload-file')}}" class="nav_link">
                                                         @endif
-                                                        <i class='bx bx-map-alt nav_icon'></i>
-                                                        <span class="nav_name">Density Of Traffic</span> </a>
-                                                    @if($active == 'public.vessel_details')
-                                                    <a href="{{route('public.vessel-details')}}" class="nav_link active">
+                                                        <i class='bx bxs-report nav_icon'></i>
+                                                        <span class="nav_name">Generate Report</span> </a>
+                                                    @else
+                                                    @if($active == 'public.dashboard')
+                                                    <a href="{{route('public.dashboard')}}" class="nav_link active">
                                                         @else
-                                                        <a href="{{route('public.vessel-details')}}" class="nav_link">
+                                                        <a href="{{route('public.dashboard')}}" class="nav_link">
                                                             @endif
-                                                            <i class='bx bx-detail nav_icon'></i>
-                                                            <span class="nav_name">Vessel Details</span> </a>
-                                                        @endif
-                                                        @if($active == 'update_account')
-                                                        <a href="{{ route('update-account') }}" class="nav_link active">
+                                                            <i class='bx bx-grid-alt nav_icon'></i>
+                                                            <span class="nav_name">Dashboard</span> </a>
+                                                        @if($active == 'public.density_of_traffic')
+                                                        <a href="{{route('public.density-of-traffic')}}" class="nav_link active">
                                                             @else
-                                                            <a href="{{ route('update-account') }}" class="nav_link">
+                                                            <a href="{{route('public.density-of-traffic')}}" class="nav_link">
                                                                 @endif
-                                                                <i class='bx bx-user nav_icon'></i>
-                                                                <span class="nav_name">Update Account</span> </a>
+                                                                <i class='bx bx-map-alt nav_icon'></i>
+                                                                <span class="nav_name">Density Of Traffic</span> </a>
+                                                            @if($active == 'public.vessel_details')
+                                                            <a href="{{route('public.vessel-details')}}" class="nav_link active">
+                                                                @else
+                                                                <a href="{{route('public.vessel-details')}}" class="nav_link">
+                                                                    @endif
+                                                                    <i class='bx bx-detail nav_icon'></i>
+                                                                    <span class="nav_name">Vessel Details</span> </a>
+                                                                @endif
+                                                                @if($active == 'update_account')
+                                                                <a href="{{ route('update-account') }}" class="nav_link active">
+                                                                    @else
+                                                                    <a href="{{ route('update-account') }}" class="nav_link">
+                                                                        @endif
+                                                                        <i class='bx bx-user nav_icon'></i>
+                                                                        <span class="nav_name">Update Account</span> </a>
 
-                        </div>
+                                </div>
                     </div>
                     <a href="{{ route('logout') }}" class="nav_link">
                         <i class='bx bx-log-out nav_icon' onclick="event.preventDefault();

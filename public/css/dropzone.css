@@ -2,7 +2,7 @@
 .dropzone {
     background: white;
     border-radius: 5px;
-    border: 2px dashed #5256AD !important;
+    /* border: 2px dashed #5256AD !important; */
     border-image: none;
     margin-top: 2rem;
     /* max-height: 95rem; */

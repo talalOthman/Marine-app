@@ -68,6 +68,8 @@ class UploadFileController extends Controller
 
 
             Excel::import(new VesselsImport, request()->file('file'));
+            notify()->success('File Uploaded Successfully!');
+            return view('student.generate-report')->with('active', 'student.upload_file');
         }
     }
 
