@@ -59,6 +59,7 @@
     <link href="{{ asset('css/density-of-traffic.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar-reskin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/upload-file.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/generate-report.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/resumablejs@1.1.0/resumable.min.js" rrel='stylesheet' />
 
     <!-- Favicon -->

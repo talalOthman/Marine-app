@@ -10,13 +10,13 @@
     width: 80vw !important;
 } 
 
-.main-container{
+/* .main-container{
 	display: flex;
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
     height: 87vh;
-}
+} */
 
 .table-position{
     margin-top: 2rem;

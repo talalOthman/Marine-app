@@ -1,14 +1,14 @@
-
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="container-generate-report">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div>
             <div class="main-container">
-                    <button class="btn btn-primary button-item">
-                         {{ __('Generate Report') }}
-                    </button>
+                <i class="fas fa-file-download icon fa-10x"></i>
+                <button class="btn btn-primary button-item">
+                    {{ __('Generate Report') }}
+                </button>
             </div>
         </div>
     </div>

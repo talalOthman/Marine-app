@@ -132,3 +132,15 @@ input[type="file"]:read-only:active {
     white-space: nowrap;
     cursor: pointer;
 }
+
+.upload-file-container{
+    /* border: 2px solid red; */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+}
+
+.fa-cloud-upload-alt{
+    font-size: 13rem;
+}
