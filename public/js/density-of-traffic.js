@@ -149,8 +149,6 @@ function getHeatMap() {
                 minOpacity: 0.7
             }).addTo(mymap);
         })
-
-
 }
 
 getHeatMap()
