@@ -69,6 +69,7 @@
     @include('notify::components.notify')
     <x:notify-messages class="notification" />
     <div id="cover"></div>
+    <div id="cover-2"></div>
     <div id="app">
 
         <body id="body-pd">
@@ -136,7 +137,7 @@
                                                             @else
                                                             <a href="{{route('public.density-of-traffic')}}" class="nav_link">
                                                                 @endif
-                                                                <i class='bx bx-map-alt nav_icon'></i>
+                                                                <i class='bx bx-map-alt nav_icon' id="density-of-traffic"></i>
                                                                 <span class="nav_name">Density Of Traffic</span> </a>
                                                             @if($active == 'public.vessel_details')
                                                             <a href="{{route('public.vessel-details')}}" class="nav_link active">
@@ -159,7 +160,7 @@
                     <a href="{{ route('logout') }}" class="nav_link">
                         <i class='bx bx-log-out nav_icon' onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"></i> <span class="nav_name">Logout</span>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" action="{{ route('logout') }}" method="GET" class="d-none">
                             @csrf
                         </form>
                     </a>
@@ -173,6 +174,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
     <script src="http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -183,7 +185,7 @@
             "lengthChange": false,
             language: {
                 search: '<i class="fa fa-search fa-lg theme-icon"></i>',
-                searchPlaceholder: 'Search Users'
+                searchPlaceholder: 'Search Data'
             },
             "info": false,
             "scrollY": "30rem",

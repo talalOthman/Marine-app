@@ -45,7 +45,7 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 
 // Logout Routes...
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Delete User Route...
 Route::get('/admin_delete/{userId}', [UserController::class, 'deleteUser'])->name('admin.delete-user')->middleware('admin');
