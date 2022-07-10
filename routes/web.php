@@ -10,6 +10,9 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\reportController;
+use App\Http\Controllers\systemAdminController;
+use App\Http\Controllers\updateAccountController;
 use App\Http\Controllers\UploadFileController;
 
 /*
@@ -28,15 +31,15 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 // Route::get('/', [LoginController::class, 'showLoginForm']);
 
 // Add Account Routes...
-Route::get('/add-account', [HomeController::class, 'redirectAddAccount'])->name('admin.add-account')->middleware('admin');
+Route::get('/add-account', [systemAdminController::class, 'redirectAddAccount'])->name('admin.add-account')->middleware('admin');
 Route::post('/add-account', [RegisterController::class, 'register'])->middleware('admin');
 
 // Update Account Routes...
-Route::get('/update_account', [HomeController::class, 'redirectUpdateAccount'])->name('update-account');
-Route::post('/update_account', [UserController::class, 'update']);
+Route::get('/update_account', [updateAccountController::class, 'redirectUpdateAccount'])->name('update-account');
+Route::post('/update_account', [updateAccountController::class, 'update']);
 
 // Dashboard Route...
-Route::get('/admin_dashboard', [HomeController::class, 'AdminIndex'])->name('admin.dashboard')->middleware('admin');
+Route::get('/admin_dashboard', [systemAdminController::class, 'AdminIndex'])->name('admin.dashboard')->middleware('admin');
 Route::get('/student_dashboard', [HomeController::class, 'StudentIndex'])->name('student.dashboard')->middleware('student');
 Route::get('/public_dashboard', [HomeController::class, 'PublicIndex'])->name('public.dashboard')->middleware('public');
 
@@ -48,18 +51,18 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Delete User Route...
-Route::get('/admin_delete/{userId}', [UserController::class, 'deleteUser'])->name('admin.delete-user')->middleware('admin');
+Route::get('/admin_delete/{userId}', [systemAdminController::class, 'deleteUser'])->name('admin.delete-user')->middleware('admin');
 
 // Update Specific Account Route...
-Route::get('/update_account/{userId}', [HomeController::class, 'RedirectUpdateSpecificAccount'])->name('admin.update-specific-account')->middleware('admin');
-Route::post('/update_account/{userId}', [UserController::class, 'UpdateSpecificAccount'])->middleware('admin');
+Route::get('/update_account/{userId}', [systemAdminController::class, 'RedirectUpdateSpecificAccount'])->name('admin.update-specific-account')->middleware('admin');
+Route::post('/update_account/{userId}', [systemAdminController::class, 'UpdateSpecificAccount'])->middleware('admin');
 
 // Upload File Route...
 Route::get('/upload_file', [HomeController::class, 'redirectUploadFile'])->name('student.upload-file')->middleware('student');
 Route::post('/upload_file', [UploadFileController::class, 'uploadFile'])->middleware('student');
 
 // Generate Report Route...
-Route::get('/generate_report', [UploadFileController::class, 'generateReport'])->name('generate-report')->middleware('student');
+Route::get('/generate_report', [reportController::class, 'generateReport'])->name('generate-report')->middleware('student');
 
 // Fetch Data from API Route...
 Route::get('/fetch_data', [UploadFileController::class, 'fetchVessels'])->middleware('student');

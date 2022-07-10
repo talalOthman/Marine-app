@@ -8,19 +8,15 @@
                 <table id="datatablesSimple" class="display table table-striped table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Vessel Type</th>
-                            <th>Call Name</th>
-                            <th>MMSI</th>
-                            <th>Cargo</th>
+                            <th>Vessel MMSI</th>
+                            <th>Vessel Channel</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($vessels as $vessel)
                         <tr>
-                            <td>{{$vessel->type}} </td>
-                            <td>{{$vessel->callName}} </td>
                             <td>{{$vessel->MMSI}} </td>
-                            <td>{{$vessel->cargo}} </td>
+                            <td>{{$vessel->ais_channel}} </td>
                         </tr>
                         @endforeach
                     </tbody>

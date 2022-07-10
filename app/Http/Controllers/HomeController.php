@@ -39,13 +39,6 @@ class HomeController extends Controller
         }
     }
 
-    public function AdminIndex()
-    {
-        if (Auth::user()) {
-            $users = User::where('id', '!=', Auth::id())->get();
-            return view('admin.dashboard')->with(['users' => $users])->with('active', 'admin.dashboard');
-        }
-    }
 
     public function StudentIndex()
     {
@@ -55,22 +48,6 @@ class HomeController extends Controller
     public function PublicIndex()
     {
         return view('public.dashboard')->with('active', 'public.dashboard');
-    }
-
-    public function redirectAddAccount()
-    {
-        return view('admin.add_account')->with('active', 'admin.add_account');
-    }
-
-    public function redirectUpdateAccount()
-    {
-        return view('update_account')->with('active', 'update_account');
-    }
-
-    public function redirectUpdateSpecificAccount($userId)
-    {
-        $user = User::find($userId);
-        return view('admin.update_specific_account')->with(['user' => $user])->with('active', 'admin.update_specific_account');
     }
 
     public function redirectUploadFile()

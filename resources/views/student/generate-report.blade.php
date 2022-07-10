@@ -6,9 +6,15 @@
         <div>
             <div class="main-container">
                 <i class="fas fa-file-download icon fa-10x"></i>
-                <button class="btn btn-primary button-item">
+                <form action="{{ route('generate-report') }}">
+                    <button class="btn btn-primary button-item" id="generate-btn">
+                        {{ __('Generate Report') }}
+                    </button>
+                </form>
+
+                <!-- <a class="btn btn-primary button-item button" href="Abnormal/AbnormalVesselList.csv" download="Generated Report">
                     {{ __('Generate Report') }}
-                </button>
+                </a> -->
             </div>
         </div>
     </div>

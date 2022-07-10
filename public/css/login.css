@@ -34,11 +34,11 @@ h2 {
 
 .half, .half .container > .row {
   height: 100vh;
-  min-height: 700px; }
+  min-height: 100vh !important; }
 
 @media (max-width: 991.98px) {
   .half .bg {
-    height: 200px; } }
+    height: 100vh !important; } }
 
 .half .contents {
   background: #f6f7fc; }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVesselDynamicDetailsTable extends Migration
+class CreateReportTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class CreateVesselDynamicDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vessel_dynamic_details', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('date_time');
+            $table->string('MMSI');
+            $table->integer('rot');
+            $table->float('sog');
             $table->double('lat', 12, 7);
             $table->double('long', 12, 7);
-            $table->integer('rate_of_turn');
             $table->float('cog');
-            $table->float('sog');
-            $table->integer('heading');
-            $table->foreignId('vessel_id');
-            
+            $table->integer('true_heading');
+            $table->integer('timestamp');
+            $table->string('ais_channel');
         });
     }
 
@@ -33,6 +35,6 @@ class CreateVesselDynamicDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vessel_dynamic_details');
+        Schema::dropIfExists('report');
     }
 }

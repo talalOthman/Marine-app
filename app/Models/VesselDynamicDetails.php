@@ -21,6 +21,10 @@ class VesselDynamicDetails extends Model
     protected $fillable = [
         'lat',
         'long',
+        'cog',
+        'heading',
+        'rate_of_turn',
+        'sog',
         'vessel_id',
     ];
 }

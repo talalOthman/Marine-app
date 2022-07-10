@@ -20,4 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::resource('anaylsis', AnalysisController::class);
+
 Route::get('/heatmap', [AnalysisController::class, 'heatMapIndex']);
+Route::get('/public_dashboard', [AnalysisController::class, 'publicDashboardIndex']);

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vessel extends Model
+class Report extends Model
 {
     use HasFactory;
 
@@ -14,18 +14,26 @@ class Vessel extends Model
     //to turn off timestamp completely
     public $timestamps = false;
 
-     /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'date_time',
         'MMSI',
+        'rot',
+        'sog',
+        'lat',
+        'long',
+        'cog',
+        'true_heading',
+        'timestamp',
         'ais_channel',
     ];
 
     public function scopeAllSpecific($query)
     {
-        return $query->get(['MMSI', 'ais_channel']);
+        return $query->get(['date_time', 'MMSI', 'rot', 'sog', 'lat', 'long', 'cog', 'true_heading', 'timestamp', 'ais_channel']);
     }
 }

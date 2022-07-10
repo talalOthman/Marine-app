@@ -15,11 +15,8 @@ class CreateVesselsTable extends Migration
     {
         Schema::create('vessels', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('callName');
-            $table->string('MMSI');
-            $table->string('cargo');
-            $table->timestamps();
+            $table->string('MMSI')->nullable();
+            $table->string('ais_channel')->nullable();
         });
     }
 

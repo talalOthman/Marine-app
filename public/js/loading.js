@@ -15,6 +15,10 @@ $('#upload-btn').on('click', function(){
     $('#cover').show();
 })
 
+// $('#generate-btn').on('click', function(){
+//     $('#cover').show();
+// })
+
 $(document).ready(function () {
     $('#upload-btn').attr('disabled', true);
     $('input:file').change(

@@ -12,22 +12,7 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 
 
 class VesselsImport implements ToCollection, WithStartRow, WithChunkReading
-// class VesselsImport implements ToModel
 {
-    /**
-     * @param array $row
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     */
-    // public function model(array $row)
-    // {
-    //     return new Vessel([
-    //         'type'     => $row[0],
-    //         'callName' => $row[1],
-    //         'MMSI'     => $row[2],
-    //         'cargo'    => $row[3],
-    //     ]);
-    // }
 
     public function collection(Collection $rows)
     {
@@ -35,10 +20,8 @@ class VesselsImport implements ToCollection, WithStartRow, WithChunkReading
         foreach ($rows as $row) {
             while ($counttemp != 1) {
                 $currVessel = new Vessel();
-                $currVessel->type = $row[0];
-                $currVessel->callName = $row[1];
                 $currVessel->MMSI = $row[2];
-                $currVessel->cargo = $row[3];
+                $currVessel->ais_channel = $row[10];
                 $currVessel->save();
                 $counttemp++;
             }
@@ -46,17 +29,19 @@ class VesselsImport implements ToCollection, WithStartRow, WithChunkReading
         foreach ($rows as $row) {
             if ($row[2] != $currVessel['MMSI']) {
                 $newVessel = new Vessel();
-                $newVessel->type = $row[0];
-                $newVessel->callName = $row[1];
                 $newVessel->MMSI = $row[2];
-                $newVessel->cargo = $row[3];
+                $newVessel->ais_channel = $row[10];
                 $newVessel->save();
                 $currVessel = $newVessel;
             }
 
             VesselDynamicDetails::create([ // dynamic vessel
+                'rate_of_turn' => $row[3],
+                'sog' => $row[4],
                 'lat'     => $row[5],
                 'long'     => $row[6],
+                'cog' => $row[7],
+                'heading' => $row[8],
                 'vessel_id' => $currVessel->id,
             ]);
         }

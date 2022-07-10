@@ -28,6 +28,13 @@
     <script src="{{ asset('js/loading.js') }}" defer></script>
     <script src="{{ asset('js/modal.js') }}" defer></script>
     <script src="{{ asset('js/upload-file.js') }}" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-rotatedmarker@0.2.0/leaflet.rotatedMarker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script> -->
+
+
+
+
+
 
 
     <!-- Fonts -->
