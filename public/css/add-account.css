@@ -1,9 +1,10 @@
 .container-add-account{
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 5rem;
     height: 87vh;
     justify-content: space-evenly;
+    /* border: 1px solid red; */
 }
 
 .image{
@@ -14,8 +15,8 @@
 
 .image-item{
     border-radius: 50%;
-    height: 25rem;
-    width: 25rem;
+    height: 23rem;
+    width: 23rem;
 }
 .edit-item{
     color: #5C61CC;

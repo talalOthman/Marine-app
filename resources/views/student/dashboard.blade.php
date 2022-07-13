@@ -1,14 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="map-container">
-            <div id="map" class="height-100 bg-light"></div>
-            </div>
-            </div>
-        </div>
+<div class="map-container">
+            <div id="map" class="map-item"></div>
     </div>
 </div>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

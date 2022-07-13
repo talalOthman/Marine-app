@@ -19,3 +19,20 @@
 .fa-file-download{
     font-size: 13rem;
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #5C61CC !important;
+  }
+  
+  .btn-primary:hover{
+    background-color: #5256AD !important;
+  }
+
+  html, body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }

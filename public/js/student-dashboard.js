@@ -121,9 +121,13 @@ function getPublicDashboard() {
             let geoCounter = 0;
             let vesselCounter = data[geoCounter].vessel_id;
             let marker = [];
+
             do {
+                let popup = L.popup()
+                .setContent('<b>MMSI:</b> ' + data[geoCounter].MMSI);
                 marker[vesselCounter] = new L.marker([data[geoCounter].long, data[geoCounter].lat], { icon: shipIcon }
                 ).addTo(mymap);
+                marker[vesselCounter].bindPopup(popup);
                 while (data[geoCounter].vessel_id == vesselCounter) {
                     marker[vesselCounter].setLatLng([data[geoCounter].long, data[geoCounter].lat]);
                     geoCounter++;

@@ -48,7 +48,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
     <link href="{{ asset('assets/css/atlantis.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('css/navbar.css') }}" rel="stylesheet"> -->
     <!-- <link href="{{ asset('css/navbar-custom.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/add-account.css') }}" rel="stylesheet">
@@ -68,6 +67,7 @@
     <link href="{{ asset('css/upload-file.css') }}" rel="stylesheet">
     <link href="{{ asset('css/generate-report.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/resumablejs@1.1.0/resumable.min.js" rrel='stylesheet' />
+
 
     <!-- Favicon -->
     <link rel="icon" href="{{ url('images/favicon.png') }}">

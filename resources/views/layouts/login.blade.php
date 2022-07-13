@@ -24,6 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/new-login.css') }}" rel="stylesheet">
 
     
 

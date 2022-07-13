@@ -40,7 +40,7 @@ h2 {
   .half .bg {
     height: 100vh !important; } }
 
-.half .contents {
+body {
   background: #f6f7fc; }
 
 .half .contents, .half .bg {
