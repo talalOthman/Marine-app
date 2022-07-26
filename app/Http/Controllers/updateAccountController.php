@@ -29,11 +29,18 @@ class updateAccountController extends Controller
     {
 
         // Validate the data submitted by user
-        $validator = Validator::make($req->all(), [
-            'userName' => ['required', 'string', 'max:255', 'unique:users'],
-            'password' => ['string', 'min:8', 'confirmed'],
-            'avatar'   => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
-        ]);
+        if ($req->password != null) {
+            $validator = Validator::make($req->all(), [
+                'userName' => ['required', 'string', 'max:255'],
+                'password' => ['string', 'min:8', 'confirmed'],
+                'avatar'   => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            ])->validate();
+        } else {
+            $validator = Validator::make($req->all(), [
+                'userName' => ['required', 'string', 'max:255'],
+                'avatar'   => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            ])->validate();
+        }
 
         $user = User::find(Auth::id());
         $avatar_name = null;

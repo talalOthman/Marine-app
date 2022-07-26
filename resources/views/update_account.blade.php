@@ -15,7 +15,7 @@
             <label for="image-upload">
                 <i class="fas fa-pen fa-lg edit-item"></i>
             </label>
-            <input id="image-upload" name="avatar" type="file" />
+            <input id="image-upload" name="avatar" type="file" accept="image/png, image/jpg, image/jpeg" />
             @error('avatar')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>

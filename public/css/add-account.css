@@ -17,6 +17,7 @@
     border-radius: 50%;
     height: 23rem;
     width: 23rem;
+    object-fit: cover;
 }
 .edit-item{
     color: #5C61CC;
