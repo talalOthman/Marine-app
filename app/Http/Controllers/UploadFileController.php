@@ -8,11 +8,14 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\VesselsExport;
 use App\Imports\VesselsImport;
 use App\Models\Vessel;
+use App\Models\VesselDynamicDetails;
 
 class UploadFileController extends Controller
 {
     public function uploadFile(Request $request)
     { 
+        VesselDynamicDetails::truncate();
+        Vessel::truncate();
         set_time_limit(0);
 
         if (!empty($request->file('file'))) {

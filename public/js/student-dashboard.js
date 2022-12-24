@@ -47,50 +47,27 @@
 
 
 
-const mymap = L.map('map', {
-    minZoom: 2,
-}).setView([1.2744383, 103.7826467], 10.5);
-const attribution =
-    'Tiles &copy; Esri &mdash; National Geographic';
 
-const tileUrl = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-const tiles = L.tileLayer(tileUrl, { attribution, });
+// let marker = new L.marker([0, 0], { icon: shipIcon }).addTo(mymap);
+// let marker2 = new L.marker([4.6626, 99.5451], { icon: shipIcon }).addTo(mymap);
 
-tiles.addTo(mymap);
-mymap.addControl(new L.Control.Fullscreen());
-const shipIcon = L.icon({
-    iconUrl: 'images/ship-marker.png',
-    iconSize: [23, 20],
-    iconAnchor: [25, 16]
-});
-var southWest = L.latLng(-89.98155760646617, -180),
-    northEast = L.latLng(89.99346179538875, 180);
-var bounds = L.latLngBounds(southWest, northEast);
+// const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
-mymap.setMaxBounds(bounds);
-mymap.on('drag', function () {
-    mymap.panInsideBounds(bounds, { animate: true });
-});
-let marker = new L.marker([0, 0], { icon: shipIcon }).addTo(mymap);
-let marker2 = new L.marker([4.6626, 99.5451], { icon: shipIcon }).addTo(mymap);
+// let firstTime = true;
 
-const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+// async function getLocation() {
+//     const response = await fetch(api_url);
+//     const data = await response.json();
+//     const { latitude, longitude } = data;
 
-let firstTime = true;
+//     marker.setLatLng([latitude, longitude]);
+//     if (firstTime) {
+//         // mymap.setView([latitude, longitude], 2);
+//         firstTime = false;
+//     }
+// }
 
-async function getLocation() {
-    const response = await fetch(api_url);
-    const data = await response.json();
-    const { latitude, longitude } = data;
-
-    marker.setLatLng([latitude, longitude]);
-    if (firstTime) {
-        // mymap.setView([latitude, longitude], 2);
-        firstTime = false;
-    }
-}
-
-getLocation();
+// getLocation();
 
 // var locations = [
 //     ["Locations 1", 6.625117, 39.145004],
@@ -106,7 +83,7 @@ getLocation();
 //           .addTo(mymap);
 // }
 
-setInterval(getLocation, 1000);
+// setInterval(getLocation, 1000);
 
 
 function getPublicDashboard() {
@@ -121,6 +98,31 @@ function getPublicDashboard() {
             let geoCounter = 0;
             let vesselCounter = data[geoCounter].vessel_id;
             let marker = [];
+
+            const mymap = L.map('map', {
+                minZoom: 2,
+            }).setView([data[0].long, data[0].lat], 10.5);
+            const attribution =
+                'Tiles &copy; Esri &mdash; National Geographic';
+            
+            const tileUrl = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+            const tiles = L.tileLayer(tileUrl, { attribution, });
+            
+            tiles.addTo(mymap);
+            mymap.addControl(new L.Control.Fullscreen());
+            const shipIcon = L.icon({
+                iconUrl: 'images/ship-marker.png',
+                iconSize: [23, 20],
+                iconAnchor: [25, 16]
+            });
+            var southWest = L.latLng(-89.98155760646617, -180),
+                northEast = L.latLng(89.99346179538875, 180);
+            var bounds = L.latLngBounds(southWest, northEast);
+            
+            mymap.setMaxBounds(bounds);
+            mymap.on('drag', function () {
+                mymap.panInsideBounds(bounds, { animate: true });
+            });
 
             do {
                 let popup = L.popup()

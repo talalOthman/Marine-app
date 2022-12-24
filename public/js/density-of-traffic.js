@@ -1,26 +1,6 @@
-
 url2 = 'http://localhost/api/heatmap';
 
-const mymap = L.map('map', {
-    minZoom: 2,
-}).setView([1.2744383, 103.7826467], 10.5);
-const attribution =
-    'Tiles &copy; Esri &mdash; National Geographic';
 
-const tileUrl = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-const tiles = L.tileLayer(tileUrl, { attribution, });
-
-tiles.addTo(mymap);
-mymap.addControl(new L.Control.Fullscreen());
-
-var southWest = L.latLng(-89.98155760646617, -180),
-    northEast = L.latLng(89.99346179538875, 180);
-var bounds = L.latLngBounds(southWest, northEast);
-
-mymap.setMaxBounds(bounds);
-mymap.on('drag', function () {
-    mymap.panInsideBounds(bounds, { animate: false });
-});
 
 
 
@@ -31,6 +11,28 @@ function getHeatMap() {
         .then(response => response.json())
         .then(data => {
             $('#cover-2').hide();
+
+            const mymap = L.map('map', {
+                minZoom: 2,
+            }).setView([data[0].long, data[0].lat], 10.5);
+            const attribution =
+                'Tiles &copy; Esri &mdash; National Geographic';
+            
+            const tileUrl = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+            const tiles = L.tileLayer(tileUrl, { attribution, });
+            
+            tiles.addTo(mymap);
+            mymap.addControl(new L.Control.Fullscreen());
+            
+            var southWest = L.latLng(-89.98155760646617, -180),
+                northEast = L.latLng(89.99346179538875, 180);
+            var bounds = L.latLngBounds(southWest, northEast);
+            
+            mymap.setMaxBounds(bounds);
+            mymap.on('drag', function () {
+                mymap.panInsideBounds(bounds, { animate: false });
+            });
+
             var allHeats = [];
             for (let i = 0; i < data.length; i++) {
                 allHeats.push([data[i].long, data[i].lat]);
